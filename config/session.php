@@ -182,8 +182,8 @@ return [
     |
     */
 
-    'http_only' => env('SESSION_HTTP_ONLY', true),
-
+    // 'http_only' => env('SESSION_HTTP_ONLY', true),
+    'http_only' => true,
     /*
     |--------------------------------------------------------------------------
     | Same-Site Cookies
@@ -200,6 +200,7 @@ return [
     */
 
     'same_site' => env('SESSION_SAME_SITE', 'lax'),
+    // 'same_site' => 'lax',
 
     /*
     |--------------------------------------------------------------------------

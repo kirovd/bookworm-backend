@@ -2,9 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Favorite extends Model
 {
-    // Model properties and methods
+    use HasFactory;
+
+    protected $fillable = ['user_id', 'book_id'];
 }

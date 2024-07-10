@@ -15,14 +15,12 @@ class FavoriteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'book_id' => 'exists:books,id',
-            'user_id' => 'exists:users,id',
+            'book_id' => 'required|exists:books,id'
         ]);
 
-        $favorite = new Favorite;
-        $favorite->user_id = $request->user_id;
-        $favorite->book_id = $request->book_id;
-        $favorite->save();
+        $favorite = Favorite::firstOrCreate([
+            'book_id' => $request->book_id,
+        ]);
 
         return response()->json($favorite);
     }

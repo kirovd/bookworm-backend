@@ -10,7 +10,6 @@ class CreateFavoritesTable extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->timestamps();
         });
@@ -21,4 +20,3 @@ class CreateFavoritesTable extends Migration
         Schema::dropIfExists('favorites');
     }
 }
-
