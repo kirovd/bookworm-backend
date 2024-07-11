@@ -9,8 +9,11 @@ class FavoriteController extends Controller
 {
     public function index()
     {
-        return Favorite::all();
+        // Fetch all favorites with their associated book details
+        $favorites = Favorite::with('book')->get();
+        return response()->json($favorites);
     }
+
 
     public function store(Request $request)
     {
