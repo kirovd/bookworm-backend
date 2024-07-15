@@ -9,3 +9,5 @@ Route::get('/', function () {
 Route::get('/csrf-token', function () {
     return response()->json(['token' => csrf_token()]);
 });
+
+Route::get('/test-env', 'TestController@checkEnv');
