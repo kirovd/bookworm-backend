@@ -1,5 +1,36 @@
 <?php
 
+/**
+ * @OA\Info(
+ *      version="1.0.0",
+ *      title="Laravel API Documentation",
+ *      description="API documentation with Swagger",
+ *      @OA\Contact(
+ *          email="kirovd@hotmail.com"
+ *      ),
+ *      @OA\License(
+ *          name="Apache 2.0",
+ *          url="http://www.apache.org/licenses/LICENSE-2.0.html"
+ *      )
+ * )
+ *
+ * @OA\Get(
+ *      path="/api/v1/favorites",
+ *      operationId="getFavoritesList",
+ *      tags={"Favorites"},
+ *      summary="Get list of favorites",
+ *      description="Returns list of favorites",
+ *      @OA\Response(
+ *          response=200,
+ *          description="Successful operation",
+ *          @OA\JsonContent(type="array", @OA\Items(ref="#/components/schemas/Favorite"))
+ *      ),
+ *      @OA\Response(response=400, description="Bad request"),
+ *      @OA\Response(response=401, description="Unauthenticated"),
+ *      @OA\Response(response=403, description="Forbidden")
+ * )
+ */
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
